@@ -1,0 +1,44 @@
+.MainMoviesList{
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+.MovieListCard{
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 22%;
+    height: 300px;
+    margin: 5px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+
+}
+.MovieListCard:hover{
+    cursor: pointer;
+    background-color: rgba(39, 187, 211, 0.38);
+    color: snow;
+}
+.poster{
+    width: 80px;
+    float:left;
+    margin: 7px 7px 7px 0;
+}
+.movieListCardBody{
+    width: 80%;
+}
+
+.OverviewListCard{
+    height: 64%;
+    position: relative;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.3em;
+}

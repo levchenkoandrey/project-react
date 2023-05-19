@@ -1,0 +1,117 @@
+.MainMoviesContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+.MoviesList{
+    width: 90%;
+    /*height: 100vh;*/
+}
+.MainMoviesContainer button{
+    margin: 5px;
+}
+.moviesPage{
+    background-color: darkcyan;
+    /*height: 100vh;*/
+    text-align: center;
+}
+.genresButton{
+    margin: 10px;
+    padding: 10px;
+    font-family: "Roboto Light";
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: darkcyan;
+    color: snow;
+}
+.genresButton:hover{
+    cursor: pointer;
+    color: #fffb00;
+}
+.MainGenresPage{
+    text-align: center;
+    /*height: 100vh;*/
+    background-color: darkcyan;
+}
+.GenresPage{
+    width: 80%;
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.genreGP{
+    width: 18%;
+    height: 35px;
+    margin: 10px;
+    font-family: "Californian FB";
+    font-size: 20px;
+    border-radius: 10px;
+}
+.genreGP:hover{
+    cursor: pointer;
+    background-color: snow;
+    color: #0a1d2c;
+    font-size: 23px;
+}
+.MovieDetailPage{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    font-family: "Californian FB";
+}
+.MainPoster{
+    padding-left: 20px;
+    width: 50%;
+    height: 80%;
+}
+.MainTitle{
+    font-size: 85px;
+}
+.release{
+    font-size: 20px;
+}
+.MainPageBody{
+    height: 70%;
+    padding:0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.overview{
+    font-size: 30px;
+}
+.SearchPage{
+    /*height: 100vh;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    background-color: darkcyan;
+}
+.change{
+   background-color: #11354f;
+    color: #fffb00;
+    padding: 30px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+.change span{
+    display: block;
+}
+.change:hover{
+    cursor: pointer;
+}
+.change:disabled{
+    background-color: gray;
+}
+.LogoPages{
+    font-size: 35px;
+    font-family: "Roboto Light";
+}
