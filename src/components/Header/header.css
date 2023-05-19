@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(197, 197, 200, 0.38);
+    background-color: rgba(11, 243, 208, 0.25);
     height: 90px;
     border-radius: 5px;
     width: 100%;
@@ -10,7 +10,7 @@
 }
 .Header a{
     text-decoration: none;
-    color: forestgreen;
+    color: #545134;
     font-size: 25px;
 }
 .Header a[class='active']{

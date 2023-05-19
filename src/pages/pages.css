@@ -59,6 +59,9 @@
 }
 .MovieDetailPage{
     margin-top: 50px;
+    padding: 50px;
+    background-color: darkcyan;
+    color: snow;
     display: flex;
     justify-content: space-around;
     font-family: "Californian FB";
@@ -114,4 +117,9 @@
 .LogoPages{
     font-size: 35px;
     font-family: "Roboto Light";
+}
+.MainPage{
+    background-color: darkcyan;
+    padding: 30px;
+    text-align: center;
 }

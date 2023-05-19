@@ -63,6 +63,9 @@ const slice = createSlice({
         nextPageG: state => {
             state.pageMovieForGenre += 1
         },
+        triggerPage:(state, action)=>{
+            state.pageMovieForGenre = action.payload
+        }
     },
     extraReducers: builder =>
         builder

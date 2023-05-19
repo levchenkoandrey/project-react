@@ -11,7 +11,6 @@ const MoviesPage:FC = () => {
     const {page} = useAppSelector(state => state.movieReducer);
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
-    console.log(page);
     useEffect(() => {
         dispatch(movieActions.getAll(page))
     }, [dispatch, page])
@@ -22,7 +21,7 @@ const MoviesPage:FC = () => {
         <div className={'moviesPage'}>
             <div className={'LogoPages'}>Movies</div>
             <button className={'genresButton'} onClick={()=> navigate('/genres')}>All Genres</button>
-
+            <div className={'findBody'}>{page}</div>
             <div className={'MainMoviesContainer'}>
                 <button className={'change'}  disabled={page < 2} onClick={()=>{dispatch(movieActions.prevPage())}}><span>Prev Page</span><span>Prev Page</span><span>Prev Page</span></button>
 

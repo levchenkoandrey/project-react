@@ -9,7 +9,7 @@ import {Rating} from "@mui/material";
 const MoviePage:FC = () => {
     const dispatch = useAppDispatch();
     const {state:{overview,title,vote_average,release_date,poster_path,genre_ids,}} = useAppLocation<IMovi>();
-    const img = `https://image.tmdb.org/t/p/w500${poster_path}`
+    const img = `https://image.tmdb.org/t/p/w400${poster_path}`
     const {genres} = useAppSelector(state => state.genreReducer);
     useEffect(() => {
         dispatch(genresActions.getAll())

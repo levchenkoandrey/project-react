@@ -12,7 +12,7 @@ interface IProps {
 const MovieListCard: FC<IProps> = ({movie,name}) => {
     const {poster_path, release_date, vote_average, title, overview} = movie;
     const navigate = useNavigate();
-    const img = `https://image.tmdb.org/t/p/w500${poster_path}`
+    const img = `https://image.tmdb.org/t/p/w200${poster_path}`
     return (
         <button className={'MovieListCard'} onClick={() => navigate('/movieDetails', {state: {...movie}})}>
 
@@ -28,7 +28,7 @@ const MovieListCard: FC<IProps> = ({movie,name}) => {
                 />
             </div>
             <p className={"OverviewListCard"}><img className={'poster'}
-                    src={poster_path ? img : 'https://image.tmdb.org/t/p/w500/A3ZbZsmsvNGdprRi2lKgGEeVLEH.jpg'}
+                    src={poster_path ? img : 'https://image.tmdb.org/t/p/w200/A3ZbZsmsvNGdprRi2lKgGEeVLEH.jpg'}
                     alt={title}/>
                 {overview}</p>
         </button>

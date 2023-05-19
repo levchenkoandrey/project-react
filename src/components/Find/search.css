@@ -4,3 +4,8 @@
 .SearchButton{
     border-radius: 5px;
 }
+.findBody{
+    text-align: center;
+    margin: 0 auto;
+    color: gold;
+}
