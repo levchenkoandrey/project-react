@@ -13,15 +13,13 @@ const MoviePage: FC = () => {
     const {state: {overview, title, vote_average, release_date, poster_path, genre_ids, id}} = useAppLocation<IMovi>();
     const img = `https://image.tmdb.org/t/p/w400${poster_path}`
     const {genres} = useAppSelector(state => state.genreReducer);
-    const {video} = useAppSelector(state => state.movieReducer);
+    const {video:{key}} = useAppSelector(state => state.movieReducer);
     useEffect(() => {
         dispatch(genresActions.getAll())
     }, [dispatch])
     useEffect(() => {
         dispatch(movieActions.getVideo(id))
     }, [id, dispatch])
-    console.log(video);
-    console.log(id);
     return (
         <div className={'MovieDetailPage'}>
             <img className={'MainPoster'} src={img} alt={title}/>
@@ -38,15 +36,18 @@ const MoviePage: FC = () => {
                     <GenreBadge key={index}
                                 genre={genres[genre]}/>)}</div>
                 <div className={'overview'}>{overview}</div>
-                <iframe
-                    className={'video'}
-                    width={'560px'}
-                    height={'315px'}
-                    src={`https://www.youtube.com/embed/${video.key}`}
-                    title={'YouTube'}
-                    allowFullScreen
-                >
-                </iframe>
+                {
+                    {key}&&
+                    <iframe
+                        className={'video'}
+                        width={'560px'}
+                        height={'315px'}
+                        src={`https://www.youtube.com/embed/${key}`}
+                        title={'YouTube'}
+                        allowFullScreen
+                    >
+                    </iframe>
+                }
             </div>
         </div>
     );
