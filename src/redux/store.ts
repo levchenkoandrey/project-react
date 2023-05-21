@@ -1,14 +1,18 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import {genreReducer, movieReducer, searchReducer} from "./slices";
+
+import {genreReducer, movieReducer, searchReducer, themeReducer} from "./slices";
+import {topMovieReducer} from "./slices";
 
 const rootReducer = combineReducers({
-        movieReducer,
-        genreReducer,
-        searchReducer
+    movieReducer,
+    genreReducer,
+    searchReducer,
+    themeReducer,
+    topMovieReducer
 });
 
-const setupStore =()=> configureStore({
-    reducer:rootReducer
+const setupStore = () => configureStore({
+    reducer: rootReducer
 });
 
 type RootState = ReturnType<typeof rootReducer>

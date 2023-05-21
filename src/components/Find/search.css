@@ -1,11 +1,34 @@
-.SearchInput{
+.SearchInput {
     margin: 20px;
-}
-.SearchButton{
+    width: 300px;
+    padding: 3px 5px;
+    font-size: 20px;
     border-radius: 5px;
 }
-.findBody{
+
+.SearchButton {
+    border-radius: 5px;
+    height: 33px;
+}
+
+.SearchButton:hover {
+    cursor: pointer;
+    background-color: rgba(47, 216, 47, 0.7);
+}
+
+.findBody {
     text-align: center;
     margin: 0 auto;
     color: gold;
+}
+
+.SearchForm {
+    min-width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.TotalResults {
+    font-size: 20px;
+    font-family: "Century Gothic";
 }

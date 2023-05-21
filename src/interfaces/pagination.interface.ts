@@ -7,17 +7,18 @@ interface IPaginationMovies<T> {
 }
 
 interface IPaginationGenres<T> {
-    genres:T[];
+    genres: T[];
 }
 
 interface IPaginationSearch<T> {
-    page:number;
-    results:T[];
+    page: number;
+    results: T[];
+    total_results: number;
 }
 
 
 export type {
-   IPaginationMovies,
-   IPaginationGenres,
+    IPaginationMovies,
+    IPaginationGenres,
     IPaginationSearch
 }

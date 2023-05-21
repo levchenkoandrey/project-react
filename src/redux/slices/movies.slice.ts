@@ -3,13 +3,15 @@ import {AxiosError} from "axios";
 
 import {IMovi, IPaginationMovies, IPaginationSearch, ISearchForGenre} from "../../interfaces";
 import {movieService} from "../../services";
-
+import {IVideo} from "../../interfaces";
 
 interface IState {
     movies: IMovi[];
     page: number;
     movieForGenre: IMovi[];
     pageMovieForGenre: number;
+    topResult: IMovi[];
+    video: IVideo;
 
 }
 
@@ -17,7 +19,12 @@ const initialState: IState = {
     movies: [],
     page: 1,
     movieForGenre: [],
-    pageMovieForGenre: 1
+    pageMovieForGenre: 1,
+    topResult: [],
+    video: {
+        key: '',
+        type: ''
+    }
 
 
 };
@@ -29,7 +36,7 @@ const getAll = createAsyncThunk<IPaginationMovies<IMovi>, number>(
             return data
         } catch (e) {
             const err = e as AxiosError
-            // return rejectWithValue(err.response.data)
+            return rejectWithValue(err.response.data)
         }
     }
 )
@@ -41,7 +48,32 @@ const getByGenre = createAsyncThunk<IPaginationSearch<IMovi>, ISearchForGenre>(
             return data
         } catch (e) {
             const err = e as AxiosError
-            // return rejectWithValue(err.response.data)
+            return rejectWithValue(err.response.data)
+        }
+    }
+)
+
+const getTop = createAsyncThunk<IPaginationSearch<IMovi>, number>(
+    'movieSlice/getTop',
+    async (page, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getTop(page);
+            return data
+        } catch (e) {
+            const err = e as AxiosError
+            return rejectWithValue(err.response.data)
+        }
+    }
+)
+const getVideo = createAsyncThunk<IPaginationSearch<IVideo>, number>(
+    'movieSlice/getVideo',
+    async (id, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getVideo(id);
+            return data
+        } catch (e) {
+            const err = e as AxiosError
+            return rejectWithValue(err.response.data)
         }
     }
 )
@@ -63,7 +95,7 @@ const slice = createSlice({
         nextPageG: state => {
             state.pageMovieForGenre += 1
         },
-        triggerPage:(state, action)=>{
+        triggerPage: (state, action) => {
             state.pageMovieForGenre = action.payload
         }
     },
@@ -78,7 +110,11 @@ const slice = createSlice({
                 state.movieForGenre = results
                 state.page = page
             })
-
+            .addCase(getVideo.fulfilled, (state, action) => {
+                const {results} = action.payload;
+                const rest = results.filter(item => item.type === "Trailer").shift()
+                state.video.key = rest.key
+            })
 });
 
 const {reducer: movieReducer, actions} = slice;
@@ -86,7 +122,9 @@ const {reducer: movieReducer, actions} = slice;
 const movieActions = {
     ...actions,
     getAll,
-    getByGenre
+    getByGenre,
+    getTop,
+    getVideo
 }
 
 export {

@@ -7,13 +7,13 @@ import {useAppDispatch} from "../hooks";
 import {movieActions} from "../redux";
 
 
-const MainLayout:FC = () => {
+const MainLayout: FC = () => {
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(movieActions.getAll(1))
     }, [dispatch])
     return (
-        <div className={'MainLayout'}>
+        <div>
             <Header/>
             <Outlet/>
         </div>

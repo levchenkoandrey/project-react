@@ -6,6 +6,7 @@ import {GenrePage, MoviesPage, MoviePage, MainPage} from "./pages";
 import './App.css'
 import {SearchPage} from "./pages";
 import {FindBody, GenreList, GenresList} from "./components";
+import './index.scss'
 
 const App = () => {
     return (

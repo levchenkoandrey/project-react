@@ -1,22 +1,24 @@
-.MainMoviesContainer{
+.MainMoviesContainer {
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
 }
-.MoviesList{
+
+.MoviesList {
     width: 90%;
-    /*height: 100vh;*/
 }
-.MainMoviesContainer button{
+
+.MainMoviesContainer button {
     margin: 5px;
 }
-.moviesPage{
-    background-color: darkcyan;
-    /*height: 100vh;*/
+
+.moviesPage {
+    padding: 30px;
     text-align: center;
 }
-.genresButton{
+
+.genresButton {
     margin: 10px;
     padding: 10px;
     font-family: "Roboto Light";
@@ -25,79 +27,93 @@
     background-color: darkcyan;
     color: snow;
 }
-.genresButton:hover{
+
+.genresButton:hover {
     cursor: pointer;
     color: #fffb00;
 }
-.MainGenresPage{
+
+.MainGenresPage {
     text-align: center;
-    /*height: 100vh;*/
-    background-color: darkcyan;
+    padding: 30px;
 }
-.GenresPage{
+
+.GenresPage {
     width: 80%;
-    margin:0 auto;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
     justify-content: space-around;
     align-items: flex-start;
 }
-.genreGP{
+
+.genreGP {
     width: 18%;
     height: 35px;
     margin: 10px;
     font-family: "Californian FB";
     font-size: 20px;
     border-radius: 10px;
+    background-color: darkcyan;
+    color: black;
 }
-.genreGP:hover{
+
+.genreGP:hover {
     cursor: pointer;
-    background-color: snow;
+    background-color: rgba(255, 250, 250, 0.49);
     color: #0a1d2c;
     font-size: 23px;
 }
-.MovieDetailPage{
-    margin-top: 50px;
-    padding: 50px;
-    background-color: darkcyan;
-    color: snow;
+
+.MovieDetailPage {
+    padding: 30px;
     display: flex;
     justify-content: space-around;
     font-family: "Californian FB";
 }
-.MainPoster{
-    padding-left: 20px;
+
+.MainPoster {
     width: 50%;
     height: 80%;
 }
-.MainTitle{
+
+.MainTitle {
     font-size: 85px;
 }
-.release{
+
+.release {
+    margin: 20px 0;
     font-size: 20px;
 }
-.MainPageBody{
+
+.GenreBadges, .video {
+    margin: 20px 0;
+}
+
+.MainPageBody {
     height: 70%;
-    padding:0 40px;
+    padding: 0 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
 }
-.overview{
+
+.overview {
     font-size: 30px;
 }
-.SearchPage{
-    /*height: 100vh;*/
+
+.SearchPage {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px;
-    background-color: darkcyan;
+    padding: 30px;
 }
-.change{
-   background-color: #11354f;
+
+.change {
+    background-color: #022440;
     color: #fffb00;
     padding: 30px 5px;
     display: flex;
@@ -105,21 +121,25 @@
     justify-content: space-between;
     border-radius: 5px;
 }
-.change span{
+
+.change span {
     display: block;
 }
-.change:hover{
+
+.change:hover {
     cursor: pointer;
 }
-.change:disabled{
+
+.change:disabled {
     background-color: gray;
 }
-.LogoPages{
+
+.LogoPages {
     font-size: 35px;
     font-family: "Roboto Light";
 }
-.MainPage{
-    background-color: darkcyan;
+
+.MainPage {
     padding: 30px;
     text-align: center;
 }

@@ -4,14 +4,14 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 import {MovieListCard} from "../MuviesList";
 import {searchActions} from "../../redux";
 
-const FindMoviesList:FC = () => {
-    const {searchMovies,page,query} = useAppSelector(state => state.searchReducer);
+const FindMoviesList: FC = () => {
+    const {searchMovies, page, query} = useAppSelector(state => state.searchReducer);
     const dispatch = useAppDispatch();
     useEffect(() => {
-        if(query.length>0){
-            dispatch(searchActions.getResult({page,query}))
+        if (query.length > 0) {
+            dispatch(searchActions.getResult({page, query}))
         }
-    }, [page,dispatch])
+    }, [query, page, dispatch])
     return (
         <div className={'MainMoviesList'}>
             {searchMovies.map(movie => <MovieListCard key={movie.id} movie={movie}/>)}

@@ -1,16 +1,11 @@
-body{
-  margin: 0;
-  background-color: darkcyan;
-  height: 100vh;
+.App {
+    height: 100%;
 }
 
-.App {
-  height: 100%;
-}
-.MainContainer{
-  padding:0;
-  margin: 0 auto;
-  width: 80%;
-  height: 100%;
-  background-color: rgb(255, 250, 250);
+.MainContainer {
+    padding: 0;
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
 }

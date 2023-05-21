@@ -4,13 +4,12 @@ import {AxiosError} from "axios";
 import {IGenre, IPaginationGenres,} from "../../interfaces";
 import {genreService} from "../../services";
 
-
 interface IState {
-    genres:{[key:number]:IGenre}
+    genres: { [key: number]: IGenre }
 }
 
-const initialState:IState ={
-    genres:{}
+const initialState: IState = {
+    genres: {}
 };
 
 const getAll = createAsyncThunk<IPaginationGenres<IGenre>, void>(
@@ -21,28 +20,28 @@ const getAll = createAsyncThunk<IPaginationGenres<IGenre>, void>(
             return data
         } catch (e) {
             const err = e as AxiosError
-            // return rejectWithValue(err.response.data)
+            return rejectWithValue(err.response.data)
         }
     }
 )
 const slice = createSlice({
-    name:'genresSlice',
+    name: 'genresSlice',
     initialState,
-    reducers:{},
-    extraReducers:builder =>
+    reducers: {},
+    extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action) => {
                 const {genres} = action.payload;
                 state.genres = genres.reduce((acc, cur) => {
-                    return {...acc, [cur.id]:cur}
-                },{})
+                    return {...acc, [cur.id]: cur}
+                }, {})
             })
 
 });
 
-const {reducer:genreReducer,actions} = slice;
+const {reducer: genreReducer, actions} = slice;
 
-const genresActions ={
+const genresActions = {
     ...actions,
     getAll
 }
